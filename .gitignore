@@ -1,7 +1,15 @@
+# macOS
 .DS_Store
+
+# Compiled Binaries & Object files
 *.o
 *.out
 *.exe
 *.dSYM/
 menu
 main
+welcome
+starter
+starter_code
+module4_assignment
+module4_binary_search
