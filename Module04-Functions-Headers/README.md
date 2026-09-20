@@ -1,52 +1,62 @@
-# Module 04: Functions, Datasets, Arrays, and Pointers
+# Module 04 - Datasets, Arrays & Pointers
 
 **Course:** CIS-25 - Programming Using C++ (L1-41736)  
 **Student:** H Cheng  
-**Repository:** [hdeic/CPlusPlus-Application-Design](https://github.com/hdeic/CPlusPlus-Application-Design)
+**Repository:** [hdeic/CPlusPlus-Application-Design](https://github.com/hdeic/CPlusPlus-Application-Design)  
+**Module 4 URL:** [Module04-Functions-Headers](https://github.com/hdeic/CPlusPlus-Application-Design/tree/main/Module04-Functions-Headers)
 
 ---
 
-## 1. Study Resources & Review
+## 1. Overview & What I Learned
+
+In [Module 01 - Setup](../Module01-Setup/README.md), I established foundational Git and development environment workflows. In [Module 02 - Variables & Menus](../Module02-Variables/README.md), I implemented interactive menu-driven control flow. In [Module 03 - Variables & Data Types](../Module03-Datasets-Arrays-Pointers/README.md), I practiced fundamental data types and personalizing console output.
+
+In **Module 04**, I advanced to working with structured collections of data using **arrays** and directly managing memory addresses using **pointers**:
+- An **array** stores multiple elements of the same data type in a contiguous block of memory.
+- A **pointer** is a variable whose value is the memory address of another variable.
+- The **address-of operator (`&`)** fetches the location in memory where data resides.
+- The **dereference operator (`*`)** accesses or modifies the value stored at that specific address.
+- **Pointer arithmetic** enables efficient sequential memory navigation across arrays.
+
+---
+
+## 2. Study Resources & Review
 
 ### Videos Watched
-1. **Binary Search:** [YouTube Link](https://youtu.be/vohuRrwbTT4?si=vBU7PLBoNa_6cU_J) - Divide-and-conquer search technique on sorted arrays in $O(\log n)$ time.
-2. **Arrays:** [YouTube Link](https://youtu.be/ZLk7qV9wEDw?si=9upMBUMJWRNYChkK) - Contiguous memory allocation, indexing, and parallel arrays in C++.
-3. **Pointers:** [YouTube Link](https://youtu.be/eNofmKYzje4?si=u1jBz36PKC2dXHHB) - Memory addresses (`&`), pointer declarations (`*`), dereferencing (`*ptr`), and pointer arithmetic.
+1. **Binary Search:** [https://youtu.be/vohuRrwbTT4?si=vBU7PLBoNa_6cU_J](https://youtu.be/vohuRrwbTT4?si=vBU7PLBoNa_6cU_J)  
+   *Takeaway:* Explains the divide-and-conquer strategy on sorted arrays, reducing search complexity from $O(n)$ to $O(\log n)$.
+2. **Arrays:** [https://youtu.be/ZLk7qV9wEDw?si=9upMBUMJWRNYChkK](https://youtu.be/ZLk7qV9wEDw?si=9upMBUMJWRNYChkK)  
+   *Takeaway:* Covers zero-indexed contiguous memory allocation and using parallel arrays to represent records with multiple attributes.
+3. **Pointers:** [https://youtu.be/eNofmKYzje4?si=u1jBz36PKC2dXHHB](https://youtu.be/eNofmKYzje4?si=u1jBz36PKC2dXHHB)  
+   *Takeaway:* Demystifies how memory addresses work, how pointer variables store memory addresses, and how dereferencing accesses the underlying data.
 
-### Articles & Code Reviewed
-- **fStream Examples:** [W3Schools C++ fstream](https://www.w3schools.com/cpp/ref_fstream_fstream.asp) - File input/output streams (`ifstream`, `ofstream`) in C++.
-- **Binary Search Implementation:** [GitHub Gist by Christopher Wang](https://gist.github.com/christophewang/da7e308c627dcc816831) - Clean iterative binary search in C++.
+### Read Articles & Code Reviewed
+- **fStream Examples:** [W3Schools C++ fStream Reference](https://www.w3schools.com/cpp/ref_fstream_fstream.asp)  
+   *Takeaway:* Illustrates file streams (`ifstream`, `ofstream`) for reading and writing persistent dataset files on disk.
+- **GitHub Binary Search Example:** [Christopher Wang Gist da7e308c627dcc816831](https://gist.github.com/christophewang/da7e308c627dcc816831)  
+   *Takeaway:* A clean, production-style iterative binary search implementation in C++.
 
 ---
 
-## 2. Homework Assignment Specifications
+## 3. Homework Assignment Instructions
 
-> **Prompt:**  
+> **Assignment:**  
 > Choose a small Kaggle dataset. Select 5–10 records and at least 2–3 fields. Represent the data in C++ arrays. Display the records and demonstrate accessing one value through a pointer.
 
 ### Selected Kaggle Dataset
-- **Dataset:** [Top Spotify Songs 2023](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) by Nidula Elgiriyewithana on Kaggle.com
-- **Selection:** 8 records (exceeds the 5–10 requirement)
+- **Dataset Title:** [Top Spotify Songs 2023](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023) by Nidula Elgiriyewithana on Kaggle.com.
+- **Number of Records:** 8 records selected (exceeds the 5–10 record requirement).
 - **Fields Represented (4 fields):**
   1. `songTitles` (`std::string`): Track name
-  2. `artists` (`std::string`): Artist(s) name
+  2. `artists` (`std::string`): Performing artist(s)
   3. `releaseYears` (`int`): Year of commercial release
-  4. `streams` (`long long`): Total Spotify stream count
-
----
-
-## 3. Files in this Module
-
-| File | Description |
-|---|---|
-| `starter.cpp` | Base starter code provided in the assignment instructions. |
-| `module4_assignment.cpp` | Main customized assignment program with the Kaggle dataset, formatted tabular display, and pointer access demonstration. |
-| `module4_binary_search.cpp` | Additional demonstration applying iterative binary search to sorted dataset arrays using pointers and functions. |
-| `spotify_top_songs_sample.csv` | Raw 8-record sample from the Kaggle dataset. |
+  4. `streams` (`long long`): Total Spotify streams
 
 ---
 
 ## 4. Starter Code
+
+The assignment instructions provided the following starter code as a foundation:
 
 ```cpp
 #include <iostream>
@@ -69,31 +79,55 @@ int main() {
 
 ---
 
-## 5. How to Compile and Run
+## 5. Implementation Details
 
-### Compiling and Running the Main Assignment (`module4_assignment.cpp`)
+Our application expands the starter code into a complete dataset exploration tool:
+1. **Parallel Arrays:** 4 arrays store 8 records of Spotify music data.
+2. **Tabular Formatting:** Utilizes `<iomanip>` (`setw`, `left`, `right`) to print an aligned, readable table of all records.
+3. **Pointer Access Demonstrations:**
+   - **Pointer Initialization:** `const long long *streamPtr = &streams[0];`
+   - **Dereferencing (`*streamPtr`):** Directly retrieves the first stream value (`3703895074`), identical to the `*scorePtr` concept in the starter code.
+   - **Pointer Arithmetic (`*(streamPtr + 3)`):** Demonstrates advancing the pointer to access the 4th record ("Sunflower" by Post Malone & Swae Lee) without array brackets.
+   - **Pointer Traversal:** Loops through the array by incrementing the pointer offset `*(streams + i)`.
+   - **Memory Inspection:** Prints the physical memory address (e.g., `0x16f...`) alongside the dereferenced value.
+
+---
+
+## 6. Files in this Module
+
+| File | Description |
+|---|---|
+| [`main.cpp`](main.cpp) / [`module4_assignment.cpp`](module4_assignment.cpp) | Primary assignment program featuring the Kaggle dataset, formatted tabular display, and comprehensive pointer access demonstrations. |
+| [`starter_code.cpp`](starter_code.cpp) / [`starter.cpp`](starter.cpp) | Base starter code from the assignment instructions. |
+| [`module4_binary_search.cpp`](module4_binary_search.cpp) | Bonus binary search implementation demonstrating array searching and pointer dereferencing based on the assigned Christopher Wang gist and video. |
+| [`spotify_top_songs_sample.csv`](spotify_top_songs_sample.csv) | Raw CSV data extract from the Kaggle dataset. |
+
+---
+
+## 7. How to Compile and Run
+
+### Main Assignment (`main.cpp` / `module4_assignment.cpp`)
 ```bash
-g++ -Wall -Wextra -std=c++17 module4_assignment.cpp -o module4_assignment
-./module4_assignment
+clang++ -Wall -Wextra -std=c++17 main.cpp -o main
+./main
 ```
 
-### Compiling and Running Starter Code (`starter.cpp`)
+### Starter Code (`starter.cpp`)
 ```bash
-g++ -std=c++17 starter.cpp -o starter
+clang++ -Wall -Wextra -std=c++17 starter.cpp -o starter
 ./starter
 ```
 
-### Compiling and Running Binary Search Demo (`module4_binary_search.cpp`)
+### Binary Search Demonstration (`module4_binary_search.cpp`)
 ```bash
-g++ -std=c++17 module4_binary_search.cpp -o module4_binary_search
-./module4_binary_search
+clang++ -Wall -Wextra -std=c++17 module4_binary_search.cpp -o binary_search
+./binary_search
 ```
 
 ---
 
-## 6. Program Execution Output
+## 8. Verified Console Output
 
-### `module4_assignment` Output:
 ```text
 ========================================================================================
            CIS-25 C++ Application Design - Module 4 Homework Assignment                 
@@ -146,8 +180,7 @@ g++ -std=c++17 module4_binary_search.cpp -o module4_binary_search
 
 ---
 
-## 7. Key Pointer Concepts Demonstrated
-1. **Address-of Operator (`&`):** Used to obtain the memory address where an array element is stored (e.g. `&streams[0]`).
-2. **Pointer Variable Declaration (`*`):** Declares a pointer of matching type (e.g. `const long long *streamPtr`).
-3. **Dereference Operator (`*`):** Retrieves the value stored at the memory location pointed to by the pointer (e.g. `*streamPtr`).
-4. **Pointer Arithmetic (`ptr + offset`):** Advances the memory pointer by $k \times \text{sizeof(type)}$ bytes to read subsequent elements (e.g. `*(streamPtr + 3)`).
+## 9. Canvas Submission Information
+
+- **GitHub Repository:** [https://github.com/hdeic/CPlusPlus-Application-Design](https://github.com/hdeic/CPlusPlus-Application-Design)
+- **Module 4 Folder URL:** [https://github.com/hdeic/CPlusPlus-Application-Design/tree/main/Module04-Functions-Headers](https://github.com/hdeic/CPlusPlus-Application-Design/tree/main/Module04-Functions-Headers)
