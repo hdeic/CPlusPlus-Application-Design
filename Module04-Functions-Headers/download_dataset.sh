@@ -1,20 +1,4 @@
 #!/usr/bin/env bash
-#
-# Course: CIS-25 - Programming Using C++
-# Student: H Cheng
-# Module: Module 4 - Datasets, Arrays, and Pointers
-#
-# Pulls the "Top Spotify Songs 2023" dataset from Kaggle and unpacks
-# data/spotify-2023.csv so that main.cpp can read it at runtime.
-#
-# Dataset page: https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023
-#
-# Two ways to pull the dataset:
-#   1. Official Kaggle CLI (pip install kaggle, then place ~/.kaggle/kaggle.json)
-#   2. Kaggle REST API via curl (works for public datasets; if KAGGLE_USERNAME
-#      and KAGGLE_KEY are set they are used for authentication)
-#
-# Usage:  ./download_dataset.sh
 
 set -euo pipefail
 
