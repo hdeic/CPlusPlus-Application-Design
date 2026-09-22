@@ -13,3 +13,8 @@ starter
 starter_code
 module4_assignment
 module4_binary_search
+binary_search
+fulltest
+
+# Kaggle download archives (the extracted CSV is committed)
+*.zip
