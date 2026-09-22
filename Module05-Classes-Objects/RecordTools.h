@@ -3,28 +3,35 @@
 
 #include <string>
 
-// Record structure representing an eCommerce inventory item
+const std::string DATASET_PATH = "data/online-retail-10.csv";
+
 struct ProductRecord {
-    int id;
-    std::string name;
-    std::string category;
-    double price;
+    std::string invoiceNo;
+    std::string stockCode;
+    std::string description;
     int quantity;
+    std::string invoiceDate;
+    double unitPrice;
+    std::string customerId;
+    std::string country;
 };
 
-// Starter code function
 void showMessage();
 
-// Assignment Functions:
-// 1. Function to add a record
-bool addRecord(ProductRecord records[], int &currentCount, int maxCapacity,
-               int id, const std::string &name, const std::string &category, double price, int quantity);
+long long reportFileSize(const std::string &path);
 
-// 2. Function to display records
+bool addRecord(ProductRecord records[], int &currentCount, int maxCapacity,
+               const std::string &invoiceNo, const std::string &stockCode,
+               const std::string &description, int quantity,
+               const std::string &invoiceDate, double unitPrice,
+               const std::string &customerId, const std::string &country);
+
+int loadRecordsFromFile(const std::string &path, ProductRecord records[],
+                        int &currentCount, int maxCapacity);
+
 void displayRecords(const ProductRecord records[], int count);
 
-// 3. Functions to calculate simple results
 double calculateTotalValue(const ProductRecord records[], int count);
 double calculateAveragePrice(const ProductRecord records[], int count);
 
-#endif // RECORDTOOLS_H
+#endif
