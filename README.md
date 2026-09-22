@@ -25,7 +25,7 @@ This repository contains module projects, code files, and documentation for the 
 | **3** | Variables, Cin, Cout | Completed (5 Sep 2026) | [Module03-Datasets-Arrays-Pointers](./Module03-Datasets-Arrays-Pointers/) |
 | **4** | Datasets, Arrays & Pointers | Completed (20 Sep 2026) | [Module04-Functions-Headers](./Module04-Functions-Headers/) |
 | **5** | Records, Headers & Functions | Completed (21 Sep 2026) | [Module05-Classes-Objects](./Module05-Classes-Objects/) |
-| **6** | Creating Classes & Objects | Upcoming | [Module06-Records-Storage](./Module06-Records-Storage/) |
+| **6** | Creating Classes & Objects | Completed (22 Sep 2026) | [Module06-Records-Storage](./Module06-Records-Storage/) |
 | **7** | Security, Roles & Binary Search | Upcoming | [Module07-Security-Search](./Module07-Security-Search/) |
 | **8** | Input Validation & Protecting Data | Upcoming | [Module08-Input-Validation](./Module08-Input-Validation/) |
 | **9** | Using AI to Expand Your Application | Upcoming | [Module09-AI-Application](./Module09-AI-Application/) |
