@@ -12,25 +12,19 @@ int main() {
 
     showMessage();
 
-    long long fileBytes = reportFileSize(DATASET_PATH);
-    if (fileBytes < 0) {
-        cerr << "ERROR: could not open \"" << DATASET_PATH << "\".\n"
-             << "Run this program from the Module05-Classes-Objects folder so the\n"
-             << "relative path to the record data file resolves correctly.\n";
-        return 1;
-    }
+    cout << "\n[Action] Inserting product records into the inventory system...\n";
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "85123A", "WHITE HANGING HEART T-LIGHT HOLDER", 6, "12/1/2010 8:26", 2.55, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "71053", "WHITE METAL LANTERN", 6, "12/1/2010 8:26", 3.39, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "84406B", "CREAM CUPID HEARTS COAT HANGER", 8, "12/1/2010 8:26", 2.75, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "84029G", "KNITTED UNION FLAG HOT WATER BOTTLE", 6, "12/1/2010 8:26", 3.39, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "84029E", "RED WOOLLY HOTTIE WHITE HEART.", 6, "12/1/2010 8:26", 3.39, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "22752", "SET 7 BABUSHKA NESTING BOXES", 2, "12/1/2010 8:26", 7.65, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536365", "21730", "GLASS STAR FROSTED T-LIGHT HOLDER", 6, "12/1/2010 8:26", 4.25, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536366", "22633", "HAND WARMER UNION JACK", 6, "12/1/2010 8:28", 1.85, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536366", "22632", "HAND WARMER RED POLKA DOT", 6, "12/1/2010 8:28", 1.85, "17850", "United Kingdom");
+    addRecord(inventory, recordCount, MAX_CAPACITY, "536367", "84879", "ASSORTED COLOUR BIRD ORNAMENT", 32, "12/1/2010 8:34", 1.69, "13047", "United Kingdom");
 
-    cout << "\n[Source] Record data file: " << DATASET_PATH << "\n";
-    cout << "[Source] Size measured with fstream seekg/tellg: " << fileBytes << " bytes\n";
-
-    cout << "\n[Action] Importing product records with the fstream class...\n";
-    int loaded = loadRecordsFromFile(DATASET_PATH, inventory, recordCount, MAX_CAPACITY);
-    if (loaded <= 0) {
-        cerr << "ERROR: no usable records were read from \"" << DATASET_PATH << "\".\n";
-        return 1;
-    }
-
-    cout << "[Status] Successfully imported " << recordCount << " product records.\n";
+    cout << "[Status] Successfully loaded " << recordCount << " product records.\n";
 
     cout << "\n[Display] Current Product Inventory Records:";
     displayRecords(inventory, recordCount);
