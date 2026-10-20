@@ -1,0 +1,18 @@
+========================================================
+            STORE INVENTORY REPORT
+========================================================
+
+ID     STOCK     DESCRIPTION                              QTY  VALUE ($)
+--------------------------------------------------------
+105    71053     WHITE METAL LANTERN                        6      20.34
+118    84029G    KNITTED UNION FLAG HOT WATER BOTTLE        6      20.34
+150    22752     SET 7 BABUSHKA NESTING BOXES               2      15.30
+201    85123A    WHITE HANGING HEART T-LIGHT HOLDER         6      15.30
+233    22633     HAND WARMER UNION JACK                     6      11.10
+276    84029E    RED WOOLLY HOTTIE WHITE HEART.             6      20.34
+342    84406B    CREAM CUPID HEARTS COAT HANGER             8      22.00
+389    84879     ASSORTED COLOUR BIRD ORNAMENT             32      54.08
+--------------------------------------------------------
+Total records:          8
+Total units in stock:   72
+Total inventory value:  $178.80
